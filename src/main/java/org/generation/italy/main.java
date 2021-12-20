@@ -23,9 +23,9 @@ public class main {
 			try(PreparedStatement ps = con.prepareStatement(sql)) {
 				try (ResultSet rs = ps.executeQuery()) {
 					while(rs.next()) {
-						System.out.print(rs.getString(1) + " - ");
-						System.out.print(rs.getString(2) + " - ");
-						System.out.print(rs.getString(3) + " - ");
+						System.out.format(rs.getString(1) + " - ");
+						System.out.format(rs.getString(2) + " - ");
+						System.out.format(rs.getString(3) + " - ");
 						System.out.println(rs.getString(4));
 					}
 				}
