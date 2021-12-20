@@ -82,7 +82,6 @@ public class main {
 
 				}
 			}
-
 		} catch (SQLException e) {
 			System.out.println("Si è verificato un errore:");
 			System.out.println(e.getMessage());
