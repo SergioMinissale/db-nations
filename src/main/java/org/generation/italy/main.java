@@ -30,15 +30,14 @@ public class main {
 				ps.setString(1, ricerca);
 
 				try (ResultSet rs = ps.executeQuery()) {
-
+					System.out.format("ID   \t " + "NAZIONE   \t " + "REGIONE   \t ");
+					System.out.println("\t CONTINENTE");
 					while (rs.next()) {
-						System.out.format("ID - ");
-						System.out.format("NAZIONE - ");
-						System.out.format("REGIONE - ");
-						System.out.println("CONTINENTE ");
-						System.out.format(rs.getString(1) + " - ");
-						System.out.format(rs.getString(2) + " - ");
-						System.out.format(rs.getString(3) + " - ");
+						
+						
+						System.out.format(rs.getString(1) + "  \t ");
+						System.out.format(rs.getString(2) + "  \t ");
+						System.out.format(rs.getString(3) + "  \t ");
 						System.out.println(rs.getString(4));
 					}
 				}
