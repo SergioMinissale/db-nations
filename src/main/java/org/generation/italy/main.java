@@ -31,7 +31,7 @@ public class main {
 
 				try (ResultSet rs = ps.executeQuery()) {
 
-					System.out.format("%3s%40s%25s%20s%n", "ID", "NAZIONE", "REGIONE", "CONTINENTE");
+					System.out.format("%3s%40s%25s%20s%\n", "ID", "NAZIONE", "REGIONE", "CONTINENTE");
 
 					while (rs.next()) {
 
@@ -69,7 +69,7 @@ public class main {
 			}
 
 			String query4 = "select  cs.`year` as Anno, cs.population as Popolazione , cs.gdp as GDP\r\n"
-					+ "from  country_stats cs\r\n" + "where country_id = 107\r\n" + "order by `year`\r\n"
+					+ "from  country_stats cs\r\n" + "where country_id = ?\r\n" + "order by `year`\r\n"
 					+ "desc limit 1;";
 			System.out.println("\nStatistiche più recenti");
 			try (PreparedStatement ps = con.prepareStatement(query4)) {
@@ -79,7 +79,6 @@ public class main {
 						System.out.println("Popolazione: " + rs.getString(2));
 						System.out.println("GDP: " + rs.getString(3));
 					}
-
 				}
 			}
 		} catch (SQLException e) {
